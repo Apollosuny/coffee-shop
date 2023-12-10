@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="wrapper" prefHeight="573.0" prefWidth="870.0" stylesheets="@LoginStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterController">
+   <children>
+      <AnchorPane fx:id="wrapper_login" layoutX="279.0" layoutY="42.0" prefHeight="490.0" prefWidth="312.0" stylesheets="@LoginStyles.css">
+         <children>
+            <Pane fx:id="login_logo" layoutX="128.0" layoutY="14.0" prefHeight="53.0" prefWidth="52.0" stylesheets="@LoginStyles.css" />
+            <Label layoutX="86.0" layoutY="73.0" text="Register">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="126.0" text="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="28.0" layoutY="153.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="32.0" layoutY="278.0" text="Password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="30.0" layoutY="305.0" prefHeight="40.0" prefWidth="253.0" />
+            <Button layoutX="30.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="253.0" text="Register">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="30.0" layoutY="431.0" text="Already have an account? " />
+            <Hyperlink fx:id="login_link" layoutX="169.0" layoutY="428.0" onAction="#redirectLogin" text="Login" />
+            <TextField fx:id="username1" layoutX="28.0" layoutY="229.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="28.0" layoutY="202.0" text="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

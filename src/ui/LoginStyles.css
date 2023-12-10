@@ -1,0 +1,20 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#wrapper {
+	-fx-background-image: url("https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+	-fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+#wrapper_login {
+	-fx-background-color: rgba(255, 255, 255, 0.8);
+	-fx-background-radius: 10px;
+	-fx-border-width: 1px;
+	-fx-border-radius: 10px;
+}
+
+#login_logo {
+	-fx-background-image: url("../../images/Cup.png");
+	-fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: contain;
+}
