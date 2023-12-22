@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="1069.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" onMouseClicked="#home" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Home">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Menu">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#coffee" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Coffee">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="162.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Tea">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Cake">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Configuration">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="262.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Settings">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="334.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Logout">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="618.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="contentArea" layoutX="1.0" prefHeight="618.0" prefWidth="922.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home Page">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+               </children></StackPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <Pane prefHeight="79.0" prefWidth="921.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="222.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons/Search.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="265.0" layoutY="24.0" prefHeight="33.0" prefWidth="287.0" />
+            <ImageView fitHeight="60.0" fitWidth="201.0" layoutX="45.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logo.png" />
+               </image></ImageView>
+            <Pane layoutX="823.0" layoutY="16.0" prefHeight="50.0" prefWidth="211.0">
+               <children>
+                  <Circle fill="DODGERBLUE" layoutX="46.0" layoutY="25.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Text layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="87.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1125.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" translateX="45.0">
+               <image>
+                  <Image url="@../../images/logo.png" />
+               </image></ImageView>
+            <Label prefHeight="19.0" prefWidth="158.0" style="-fx-alignment: center; -fx-border-color: #ccc; -fx-border-width: 0px 0px 1px 0px;" text="Dec 12, 2023">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Home">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Menu">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#coffee" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Coffee">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="162.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Tea">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Cake">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Configuration">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="262.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Settings">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="334.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Logout">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="714.0" prefWidth="969.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="79.0" prefWidth="975.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <TextField layoutX="112.0" layoutY="18.0" prefHeight="43.0" prefWidth="337.0" />
+                  <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="68.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons/Search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <StackPane layoutX="-1.0" layoutY="79.0" prefHeight="671.0" prefWidth="976.0" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>
