@@ -8,49 +8,38 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1225.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1225.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
    <left>
       <VBox prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
          <children>
             <Separator prefWidth="200.0" />
-            <Button mnemonicParsing="false" onMouseClicked="#home" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Home">
+            <Button fx:id="btn_dashboard" mnemonicParsing="false" onMouseClicked="#dashboard" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Dashboard">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
             <Separator prefWidth="200.0" />
-            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Menu">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Button layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#coffee" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Coffee">
+            <Button fx:id="btn_products" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#products" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Products">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="162.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Tea">
+            <Button fx:id="btn_orders" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Orders">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Cake">
+            <Button fx:id="btn_categories" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Categories">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Separator prefWidth="200.0" />
-            <Label prefHeight="19.0" prefWidth="163.0" style="-fx-padding: 0px 12px;" text="Configuration">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
             <Button layoutX="10.0" layoutY="262.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Settings">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="334.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Logout">
+            <Button fx:id="btn_logout" layoutX="10.0" layoutY="334.0" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Logout">
                <font>
                   <Font size="16.0" />
                </font>
@@ -85,7 +74,7 @@
                <image>
                   <Image url="@../../images/logo.png" />
                </image></ImageView>
-            <Pane layoutX="823.0" layoutY="16.0" prefHeight="50.0" prefWidth="211.0">
+            <Pane layoutX="959.0" layoutY="16.0" prefHeight="50.0" prefWidth="211.0">
                <children>
                   <Circle fill="DODGERBLUE" layoutX="46.0" layoutY="25.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">
@@ -93,7 +82,7 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
-                  <Text layoutX="87.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User">
+                  <Text layoutX="87.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
                      <font>
                         <Font size="13.0" />
                      </font>
