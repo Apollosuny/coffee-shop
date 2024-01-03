@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Products Page">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;">
+         <children>
+            <Pane layoutX="13.0" layoutY="14.0" prefHeight="240.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" />
+            <Pane layoutX="14.0" layoutY="266.0" prefHeight="375.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <children>
+                  <TableView layoutX="14.0" layoutY="8.0" prefHeight="360.0" prefWidth="1022.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="ID Products" />
+                      <TableColumn prefWidth="128.0" text="Product Name" />
+                        <TableColumn prefWidth="128.0" text="Quantity" />
+                        <TableColumn prefWidth="128.0" text="Price per unit" />
+                        <TableColumn prefWidth="128.0" text="Category" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
    </children>
 </StackPane>
