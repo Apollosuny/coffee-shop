@@ -30,7 +30,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="btn_categories" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Categories">
+            <Button fx:id="btn_categories" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" onMouseClicked="#categories" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Categories">
                <font>
                   <Font size="16.0" />
                </font>
