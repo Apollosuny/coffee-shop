@@ -33,12 +33,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import store.categoryStore;
 
 
 
 public class CategoryController {
-
-	
 		
 		@FXML
 		BorderPane bp;
@@ -46,41 +45,23 @@ public class CategoryController {
 		@FXML
 		StackPane contentArea;
 		
-		@FXML 
-		private Button btn_logout;
-		
 		@FXML
-	    private ComboBox<?> product_type;
+	    private TextField category_description;
 
 	    @FXML
-	    private ImageView product_image;
+	    private Button btn_update_category;
 
 	    @FXML
-	    private Button btn_update_product;
+	    private TextField category_name;
 
 	    @FXML
-	    private Button btn_add_product;
+	    private Button btn_add_category;
 
 	    @FXML
-	    private TextField product_price;
+	    private Button btn_clear_category;
 
 	    @FXML
-	    private TableView<?> product_table;
-
-	    @FXML
-	    private TextField product_name;
-
-	    @FXML
-	    private Button btn_import_image;
-
-	    @FXML
-	    private Button btn_clear_product;
-
-	    @FXML
-	    private TextField product_quantity;
-
-	    @FXML
-	    private Button btn_delete_product;
+	    private Button btn_delete_category;
 	    
 	    @FXML
 	    private TableView<CategoryDTO> category_table;
@@ -103,20 +84,160 @@ public class CategoryController {
 		
 		private ObservableList<CategoryDTO> categoryList;
 		
-		@FXML
-		public void dashboard (MouseEvent event) {
-			bp.setCenter(contentArea);
+		public void addNewCategory() {
+			if (category_name.getText().isEmpty()) {
+	            
+	            alert = new Alert(AlertType.ERROR);
+	            alert.setTitle("Error Message");
+	            alert.setHeaderText(null);
+	            alert.setContentText("Please fill name field!");
+	            alert.showAndWait();
+	            
+	        } else {
+
+	            // CHECK PRODUCT ID
+	            String checkCategoryID = "SELECT name FROM categories WHERE name = '"
+	                    + category_name.getText() + "'";
+	            
+	            connect = new Database().connectDB();
+	            
+	            try {
+	                
+	                prepare = connect.prepareStatement(checkCategoryID);
+	                rs = prepare.executeQuery();
+	                
+	                if (rs.next()) {
+	                    alert = new Alert(AlertType.ERROR);
+	                    alert.setTitle("Error Message");
+	                    alert.setHeaderText(null);
+	                    alert.setContentText(category_name.getText() + " is already taken");
+	                    alert.showAndWait();
+	                } else {
+	                    String insertData = "INSERT INTO categories "
+	                            + "(name, description) "
+	                            + "VALUES(?,?)";
+	                    
+	                    prepare = connect.prepareStatement(insertData);
+	                    prepare.setString(1, category_name.getText());
+	                    prepare.setString(2, category_description.getText() != null ? category_description.getText() : null);
+	                    
+	                    prepare.executeUpdate();
+	                    
+	                    alert = new Alert(AlertType.INFORMATION);
+	                    alert.setTitle("Error Message");
+	                    alert.setHeaderText(null);
+	                    alert.setContentText("Successfully Added!");
+	                    alert.showAndWait();
+	                    
+	                    showCategoryData();
+	                    categoryClearBtn();
+	                }
+	                
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
 		}
 		
-		@FXML
-		public void products (MouseEvent event) {
-			loadPage("Products");
-		}
+		public void categoryUpdateBtn() {
+	        
+	        if (category_name.getText().isEmpty()) {
+	            
+	            alert = new Alert(AlertType.ERROR);
+	            alert.setTitle("Error Message");
+	            alert.setHeaderText(null);
+	            alert.setContentText("Please fill name field");
+	            alert.showAndWait();
+	            
+	        } else {
+	            
+	            String updateData = "UPDATE categories SET "
+	                    + "name = '" + category_name.getText() + "', description = '"
+	                    + category_description.getText() +  "' WHERE id = " + categoryStore.id;
+	            
+	            connect = new Database().connectDB();
+	            
+	            try {
+	                
+	                alert = new Alert(AlertType.CONFIRMATION);
+	                alert.setTitle("Error Message");
+	                alert.setHeaderText(null);
+	                alert.setContentText("Are you sure you want to UPDATE category ID: " + categoryStore.id + "?");
+	                Optional<ButtonType> option = alert.showAndWait();
+	                
+	                if (option.get().equals(ButtonType.OK)) {
+	                    prepare = connect.prepareStatement(updateData);
+	                    prepare.executeUpdate();
+	                    
+	                    alert = new Alert(AlertType.INFORMATION);
+	                    alert.setTitle("Error Message");
+	                    alert.setHeaderText(null);
+	                    alert.setContentText("Successfully Updated!");
+	                    alert.showAndWait();
+
+	                    // TO UPDATE YOUR TABLE VIEW
+	                    showCategoryData();
+	                    // TO CLEAR YOUR FIELDS
+	                    categoryClearBtn();
+	                } else {
+	                    alert = new Alert(AlertType.ERROR);
+	                    alert.setTitle("Error Message");
+	                    alert.setHeaderText(null);
+	                    alert.setContentText("Cancelled.");
+	                    alert.showAndWait();
+	                }
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 		
-		@FXML 
-		public void categories (MouseEvent event) {
-			loadPage("Categories");
-		}
+		public void categoryDeleteBtn() {
+	        if (categoryStore.id == 0) {
+	            
+	            alert = new Alert(AlertType.ERROR);
+	            alert.setTitle("Error Message");
+	            alert.setHeaderText(null);
+	            alert.setContentText("Please fill all blank fields");
+	            alert.showAndWait();
+	            
+	        } else {
+	            alert = new Alert(AlertType.CONFIRMATION);
+	            alert.setTitle("Error Message");
+	            alert.setHeaderText(null);
+	            alert.setContentText("Are you sure you want to DELETE Product ID: " + categoryStore.id + "?");
+	            Optional<ButtonType> option = alert.showAndWait();
+	            
+	            if (option.get().equals(ButtonType.OK)) {
+	                String deleteData = "DELETE FROM categories WHERE id = " + categoryStore.id;
+	                try {
+	                    prepare = connect.prepareStatement(deleteData);
+	                    prepare.executeUpdate();
+	                    
+	                    alert = new Alert(AlertType.ERROR);
+	                    alert.setTitle("Error Message");
+	                    alert.setHeaderText(null);
+	                    alert.setContentText("Successfully Deleted!");
+	                    alert.showAndWait();
+
+	                    // TO UPDATE YOUR TABLE VIEW
+	                    showCategoryData();
+	                    // TO CLEAR YOUR FIELDS
+	                    categoryClearBtn();
+	                    
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	            } else {
+	                alert = new Alert(AlertType.ERROR);
+	                alert.setTitle("Error Message");
+	                alert.setHeaderText(null);
+	                alert.setContentText("Cancelled");
+	                alert.showAndWait();
+	            }
+	        }
+	    }
+		
 		
 		public ObservableList<CategoryDTO> categoryDataList() {
 			ObservableList<CategoryDTO> list = FXCollections.observableArrayList();
@@ -153,42 +274,25 @@ public class CategoryController {
 			category_table.setItems(categoryList);
 		}
 		
-		private void loadPage(String page) {
-			Parent root = null;
-			
-			try {
-				root = FXMLLoader.load(getClass().getResource("/ui/" + page + ".fxml"));
-			} catch (Exception e) {
-				Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, e);
-			}
-			
-			bp.setCenter(root);
-		}
-		
-		@FXML
-		public void logout(ActionEvent event) {
-			try {
-	            
-	            alert = new Alert(AlertType.CONFIRMATION);
-	            alert.setTitle("Error Message");
-	            alert.setHeaderText(null);
-	            alert.setContentText("Are you sure you want to logout?");
-	            Optional<ButtonType> option = alert.showAndWait();
-	            
-	            if (option.get().equals(ButtonType.OK)) {
-	                // LINK YOUR LOGIN FORM AND SHOW IT 
-	                Parent root = FXMLLoader.load(getClass().getResource("/ui/Login.fxml"));
-	        		Stage stage = new Stage();
-	        		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        		Scene scene = new Scene(root);
-	        		stage.setScene(scene);
-	        		stage.show();
-	                
-	            }
-	            
-	        } catch (Exception e) {
-	            e.printStackTrace();
+		public void categorySelectData() {
+	        
+	        CategoryDTO categoryData = category_table.getSelectionModel().getSelectedItem();
+	        int num = category_table.getSelectionModel().getSelectedIndex();
+	        
+	        if ((num - 1) < -1) {
+	            return;
 	        }
+	        
+	        category_name.setText(categoryData.getName());
+	        category_description.setText(categoryData.getDescription());
+	        
+	        categoryStore.id = categoryData.getId();
+	    }
+		
+		
+		public void categoryClearBtn() {
+			category_name.setText("");
+			category_description.setText("");
 		}
 		
 		public void initialize() {

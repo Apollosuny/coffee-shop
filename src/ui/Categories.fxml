@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CategoryController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;">
          <children>
@@ -25,22 +25,22 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_add_category" layoutX="334.0" layoutY="53.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="95.0" text="Add">
+                  <Button fx:id="btn_add_category" layoutX="334.0" layoutY="53.0" mnemonicParsing="false" onAction="#addNewCategory" prefHeight="42.0" prefWidth="95.0" text="Add">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_update_category" layoutX="334.0" layoutY="129.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="95.0" text="Update">
+                  <Button fx:id="btn_update_category" layoutX="334.0" layoutY="129.0" mnemonicParsing="false" onAction="#categoryUpdateBtn" prefHeight="42.0" prefWidth="95.0" text="Update">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_delete_category" layoutX="478.0" layoutY="53.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="95.0" text="Delete">
+                  <Button fx:id="btn_delete_category" layoutX="478.0" layoutY="53.0" mnemonicParsing="false" onAction="#categoryDeleteBtn" prefHeight="42.0" prefWidth="95.0" text="Delete">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_clear_category" layoutX="478.0" layoutY="129.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="95.0" text="Clear">
+                  <Button fx:id="btn_clear_category" layoutX="478.0" layoutY="129.0" mnemonicParsing="false" onAction="#categoryClearBtn" prefHeight="42.0" prefWidth="95.0" text="Clear">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -49,7 +49,7 @@
             </Pane>
             <Pane layoutX="14.0" layoutY="266.0" prefHeight="375.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
                <children>
-                  <TableView fx:id="category_table" layoutX="14.0" layoutY="8.0" prefHeight="360.0" prefWidth="1022.0">
+                  <TableView fx:id="category_table" layoutX="14.0" layoutY="8.0" onMouseClicked="#categorySelectData" prefHeight="360.0" prefWidth="1022.0">
                      <columns>
                         <TableColumn fx:id="col_id_category" prefWidth="122.0" text="ID Category" />
                         <TableColumn fx:id="col_name_category" prefWidth="171.0" text="Category Name" />
