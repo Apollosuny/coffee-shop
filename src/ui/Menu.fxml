@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1076.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+   <children>
+      <AnchorPane layoutX="801.0" layoutY="29.0" prefHeight="614.0" prefWidth="260.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="table_order" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="232.0">
+               <columns>
+                  <TableColumn fx:id="col_order_product_name" prefWidth="89.0" text="Product Name" />
+                  <TableColumn fx:id="col_order_product_quantity" prefWidth="61.0" text="Quantity" />
+                  <TableColumn fx:id="col_order_product_price" prefWidth="75.0" text="Price ($)" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="33.0" layoutY="29.0" prefHeight="614.0" prefWidth="740.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+         <children>
+            <ScrollPane layoutX="15.0" layoutY="13.0" prefHeight="588.0" prefWidth="710.0">
+               <content>
+                  <GridPane fx:id="menu_gridPane" prefHeight="29.0" prefWidth="112.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

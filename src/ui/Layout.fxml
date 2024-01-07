@@ -61,14 +61,34 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="618.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane fx:id="contentArea" layoutX="1.0" prefHeight="651.0" prefWidth="1075.0">
+            <AnchorPane prefHeight="652.0" prefWidth="1076.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home Page">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-               </children></StackPane>
+                  <AnchorPane layoutX="23.0" layoutY="19.0" prefHeight="614.0" prefWidth="740.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+                     <children>
+                        <ScrollPane layoutX="15.0" layoutY="13.0" prefHeight="588.0" prefWidth="710.0">
+                           <content>
+                              <GridPane fx:id="menu_gridPane" prefHeight="29.0" prefWidth="112.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="791.0" layoutY="19.0" prefHeight="614.0" prefWidth="260.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="232.0">
+                          <columns>
+                            <TableColumn prefWidth="89.0" text="Product Name" />
+                            <TableColumn prefWidth="61.0" text="Quantity" />
+                              <TableColumn prefWidth="75.0" text="Price ($)" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>
@@ -85,7 +105,7 @@
                <image>
                   <Image url="@../../images/logo.png" />
                </image></ImageView>
-            <Pane layoutX="823.0" layoutY="16.0" prefHeight="50.0" prefWidth="211.0">
+            <Pane layoutX="980.0" layoutY="15.0" prefHeight="50.0" prefWidth="211.0">
                <children>
                   <Circle fill="DODGERBLUE" layoutX="46.0" layoutY="25.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">

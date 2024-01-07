@@ -18,6 +18,19 @@ public class ProductDTO {
 		this.product_banner = product_banner;
 		this.category = category;
 	}
+	
+	public ProductDTO(int id, String product_name, float product_unit_price, String product_banner) {
+		this.id = id;
+		this.product_name = product_name;
+		this.product_unit_price = product_unit_price;
+		this.product_banner = product_banner;
+	}
+	
+	public ProductDTO(String product_name, int product_quantity, float product_unit_price) {
+		this.product_name = product_name;
+		this.product_quantity = product_quantity;
+		this.product_unit_price = product_unit_price;
+	}
 
 	public int getId() {
 		return id;

@@ -20,6 +20,11 @@
                </font>
             </Button>
             <Separator prefWidth="200.0" />
+            <Button fx:id="btn_menu" mnemonicParsing="false" onMouseClicked="#menu" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Menu">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
             <Button fx:id="btn_products" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#products" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: transperant;" text="Products">
                <font>
                   <Font size="16.0" />

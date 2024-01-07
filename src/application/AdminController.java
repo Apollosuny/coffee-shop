@@ -115,6 +115,11 @@ public class AdminController {
 		loadPage("Categories");
 	}
 	
+	@FXML 
+	public void menu (MouseEvent event) {
+		loadPage("Menu");
+	}
+	
 	public ObservableList<CategoryDTO> categoryDataList() {
 		ObservableList<CategoryDTO> list = FXCollections.observableArrayList();
 		
