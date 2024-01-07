@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1076.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <children>
-      <AnchorPane layoutX="801.0" layoutY="29.0" prefHeight="614.0" prefWidth="260.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+      <AnchorPane layoutX="801.0" layoutY="29.0" prefHeight="614.0" prefWidth="260.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
          <children>
             <TableView fx:id="table_order" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="232.0">
                <columns>
@@ -16,6 +17,43 @@
                   <TableColumn fx:id="col_order_product_price" prefWidth="75.0" text="Price ($)" />
                </columns>
             </TableView>
+            <Pane layoutX="14.0" layoutY="225.0" prefHeight="168.0" prefWidth="232.0" style="-fx-background-color: #ededed; -fx-background-radius: 8px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Subtotal" />
+                  <Label fx:id="txt_subtotal" layoutX="175.0" layoutY="9.0" text="\$12.9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="47.0" text="Discount sales" />
+                  <Label fx:id="txt_discount" layoutX="182.0" layoutY="45.0" text="\$12.9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="84.0" text="Tax" />
+                  <Label fx:id="txt_tax" layoutX="182.0" layoutY="82.0" text="\$12.9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="126.0" text="Total">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_total" layoutX="163.0" layoutY="126.0" text="\$12.9">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btn_payment" layoutX="14.0" layoutY="413.0" mnemonicParsing="false" onAction="#menuPaymentBtn" prefHeight="45.0" prefWidth="232.0" text="Payment">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="33.0" layoutY="29.0" prefHeight="614.0" prefWidth="740.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">

@@ -168,6 +168,8 @@ public class CardController {
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully Added!");
                     alert.showAndWait();
+                    
+                    menuController.menuGetSubtotal();
 					
 				}
 			}
