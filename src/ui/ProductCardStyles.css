@@ -1,0 +1,12 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#card_form {
+	-fx-background-color: white;
+	-fx-background-radius: 10px;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0);
+}
+
+#card_image {
+	-fx-background-size: cover;
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}

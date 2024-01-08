@@ -25,54 +25,57 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="287.0" layoutY="15.0" text="Product price">
+                  <Label layoutX="288.0" layoutY="96.0" text="Product price">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="product_price" layoutX="288.0" layoutY="52.0" prefHeight="35.0" prefWidth="220.0" />
-                  <Label layoutX="545.0" layoutY="16.0" text="Product type">
+                  <TextField fx:id="product_price" layoutX="289.0" layoutY="133.0" prefHeight="35.0" prefWidth="220.0" />
+                  <Label layoutX="288.0" layoutY="16.0" text="Product type">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="product_type" layoutX="545.0" layoutY="51.0" prefHeight="35.0" prefWidth="220.0" />
-                  <Button fx:id="btn_import_image" layoutX="852.0" layoutY="145.0" mnemonicParsing="false" onAction="#productImportBtn" prefHeight="30.0" prefWidth="135.0" text="Import Image">
+                  <ComboBox fx:id="product_type" layoutX="288.0" layoutY="51.0" prefHeight="35.0" prefWidth="220.0" />
+                  <Button fx:id="btn_import_image" layoutX="558.0" layoutY="167.0" mnemonicParsing="false" onAction="#productImportBtn" prefHeight="30.0" prefWidth="135.0" text="Import Image">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Pane layoutX="852.0" layoutY="23.0" prefHeight="115.0" prefWidth="135.0" style="-fx-border-color: #000; -fx-border-radius: 10px;">
-                     <children>
-                        <ImageView fx:id="product_image" fitHeight="115.0" fitWidth="128.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </Pane>
+                  <ImageView fx:id="product_image" fitHeight="115.0" fitWidth="128.0" layoutX="562.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="btn_add_product" layoutX="34.0" layoutY="190.0" mnemonicParsing="false" onAction="#productAddBtn" prefHeight="42.0" prefWidth="95.0" text="Add">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_update_product" layoutX="169.0" layoutY="190.0" mnemonicParsing="false" onAction="#productUpdateBtn" prefHeight="42.0" prefWidth="95.0" text="Update">
+                  <Button fx:id="btn_update_product" layoutX="158.0" layoutY="190.0" mnemonicParsing="false" onAction="#productUpdateBtn" prefHeight="42.0" prefWidth="95.0" text="Update">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_delete_product" layoutX="312.0" layoutY="190.0" mnemonicParsing="false" onAction="#productDeleteBtn" prefHeight="42.0" prefWidth="95.0" text="Delete">
+                  <Button fx:id="btn_delete_product" layoutX="288.0" layoutY="190.0" mnemonicParsing="false" onAction="#productDeleteBtn" prefHeight="42.0" prefWidth="95.0" text="Delete">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_clear_product" layoutX="450.0" layoutY="190.0" mnemonicParsing="false" onAction="#productClearBtn" prefHeight="42.0" prefWidth="95.0" text="Clear">
+                  <Button fx:id="btn_clear_product" layoutX="413.0" layoutY="190.0" mnemonicParsing="false" onAction="#productClearBtn" prefHeight="42.0" prefWidth="95.0" text="Clear">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
+                  <Separator layoutX="721.0" layoutY="20.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <TextField fx:id="product_search" layoutX="790.0" layoutY="127.0" prefHeight="35.0" prefWidth="220.0" />
+                  <Label layoutX="850.0" layoutY="73.0" text="Find Product">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children></Pane>
             <Pane layoutX="14.0" layoutY="266.0" prefHeight="375.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
                <children>
-                  <TableView fx:id="product_table" layoutX="14.0" layoutY="8.0" onMouseClicked="#productSelectData" prefHeight="360.0" prefWidth="1022.0">
+                  <TableView fx:id="product_table" layoutX="14.0" layoutY="8.0" onMouseClicked="#productSelectData" prefHeight="360.0" prefWidth="1022.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
                     <columns>
-                      <TableColumn fx:id="col_product_id" prefWidth="95.0" text="ID Products" />
+                      <TableColumn fx:id="col_product_id" prefWidth="95.0" style="-fx-background-radius: 10;" text="ID Products" />
                       <TableColumn fx:id="col_product_name" prefWidth="136.0" text="Product Name" />
                         <TableColumn fx:id="col_product_quantity" prefWidth="135.0" text="Quantity" />
                         <TableColumn fx:id="col_product_price" prefWidth="117.0" text="Price per unit" />

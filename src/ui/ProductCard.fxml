@@ -8,46 +8,35 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="card_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="250.0" style="-fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CardController">
+<AnchorPane fx:id="card_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="250.0" stylesheets="@ProductCardStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CardController">
    <children>
       <VBox layoutX="75.0" layoutY="24.0" prefHeight="348.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="105.0" prefWidth="250.0">
                <children>
-                  <ImageView fx:id="card_image" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="card_name" prefHeight="43.0" prefWidth="118.0" text="Chocolate Frappuccino">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="card_price" layoutX="8.0" layoutY="50.0" text="\$ 4.51">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
+                  <ImageView fx:id="card_image" fitHeight="100.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </HBox>
             <Pane prefHeight="123.0" prefWidth="250.0">
                <children>
-                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size">
+                  <Text layoutX="7.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <RadioButton layoutX="6.0" layoutY="38.0" mnemonicParsing="false" text="S" />
-                  <RadioButton layoutX="56.0" layoutY="38.0" mnemonicParsing="false" text="M" />
-                  <RadioButton layoutX="109.0" layoutY="38.0" mnemonicParsing="false" text="L" />
-                  <RadioButton layoutX="56.0" layoutY="87.0" mnemonicParsing="false" text="Cold" />
-                  <RadioButton layoutX="7.0" layoutY="87.0" mnemonicParsing="false" text="Hot" />
-                  <Text layoutX="6.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mood">
+                  <RadioButton layoutX="74.0" layoutY="87.0" mnemonicParsing="false" text="S" />
+                  <RadioButton layoutX="124.0" layoutY="87.0" mnemonicParsing="false" text="M" />
+                  <RadioButton layoutX="177.0" layoutY="87.0" mnemonicParsing="false" text="L" />
+                  <Label fx:id="card_name" layoutX="1.0" prefHeight="43.0" prefWidth="218.0" text="Chocolate Frappuccino">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </Text>
+                  </Label>
+                  <Label fx:id="card_price" layoutX="83.0" layoutY="40.0" text="\$ 4.51">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane prefHeight="121.0" prefWidth="250.0">

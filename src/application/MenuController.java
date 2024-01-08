@@ -120,6 +120,7 @@ public class MenuController {
                 if (option.get().equals(ButtonType.OK)) {
                     getCustomerId();
                     menuGetSubtotal();
+                    System.out.println(order_id);
                     prepare = connect.prepareStatement(insertBill);
                     prepare.setInt(1, order_id);
                     prepare.setFloat(2, (float)((subtotal + subtotal * 0.1)));
@@ -156,6 +157,8 @@ public class MenuController {
 	}
 	
 	public void clearData() {
+		subtotal = 0;
+		order_id = 0;
 		txt_subtotal.setText("$0");
 		txt_tax.setText("$0");
 		txt_total.setText("$0");
@@ -176,7 +179,6 @@ public class MenuController {
 			rs = prepare.executeQuery();
 			
 			ProductDTO prod;
-			System.out.println("OUTSIDE");
 			while(rs.next()) {
 				prod = new ProductDTO(rs.getInt("product_id"), 
 						rs.getString("product_name"), 
@@ -187,6 +189,7 @@ public class MenuController {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return listData;
 	}
@@ -194,8 +197,6 @@ public class MenuController {
 	public void menuDisplayCard() {
 		cardListData.clear();
 		cardListData.addAll(menuGetData());
-		
-		System.out.println(cardListData);
 		
 		int row = 0;
 		int column = 0;
@@ -294,12 +295,12 @@ public class MenuController {
             	orderId = rs.getInt("order_id");
 			
 			
-			String checkOrderId = "SELECT order_id FROM bill";
+			String checkOrderId = "SELECT MAX(order_id) as max_order_id FROM bill";
             prepare = connect.prepareStatement(checkOrderId);
             rs = prepare.executeQuery();
             int checkID = 0;
             if (rs.next()) {
-                checkID = rs.getInt("order_id");
+                checkID = rs.getInt("max_order_id");
             }
             
             if (customer_id == 0) {

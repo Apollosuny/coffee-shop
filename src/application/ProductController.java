@@ -16,6 +16,8 @@ import dto.CategoryDTO;
 import dto.ProductDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -87,6 +89,9 @@ public class ProductController {
     
     @FXML
     private AnchorPane product_form;
+    
+    @FXML
+    private TextField product_search;
     
     private Image image;
     
@@ -388,6 +393,29 @@ public class ProductController {
     	col_product_category.setCellValueFactory(new PropertyValueFactory<ProductDTO, String>("category"));
     	
     	product_table.setItems(productListData);
+    	
+    	// Filter part
+    	FilteredList<ProductDTO> filteredData = new FilteredList<ProductDTO>(productListData, b->true);
+    	
+    	product_search.textProperty().addListener((observable, oldValue, newValue) -> {
+    		filteredData.setPredicate(productDto -> {
+    			if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+    				return true;
+    			}
+    			
+    			String searchKeyword = newValue.toLowerCase();
+    			
+    			if (productDto.getProduct_name().toLowerCase().indexOf(searchKeyword) > -1) {
+    				return true;
+    			} else 
+    				return false;
+    		});
+    	});
+    	
+    	SortedList<ProductDTO> sortedData = new SortedList<ProductDTO>(filteredData);
+    	
+    	sortedData.comparatorProperty().bind(product_table.comparatorProperty());
+    	product_table.setItems(sortedData);
     }
     
     public String getCategoryName(int id) throws SQLException {
