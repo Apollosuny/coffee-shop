@@ -121,7 +121,7 @@
                               </Pane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="16.0" layoutY="169.0" prefHeight="470.0" prefWidth="1044.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+                        <AnchorPane layoutX="16.0" layoutY="169.0" prefHeight="470.0" prefWidth="1044.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="169.0">
                            <children>
                               <BarChart layoutX="14.0" layoutY="23.0">
                                 <xAxis>
@@ -148,13 +148,8 @@
       </AnchorPane>
    </center>
    <top>
-      <Pane prefHeight="79.0" prefWidth="921.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+      <Pane fx:id="banner_header" prefHeight="79.0" prefWidth="921.0" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="222.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/icons/Search.png" />
-               </image>
-            </ImageView>
             <TextField layoutX="265.0" layoutY="24.0" prefHeight="33.0" prefWidth="287.0" />
             <ImageView fitHeight="60.0" fitWidth="201.0" layoutX="45.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -163,18 +158,23 @@
             <Pane layoutX="990.0" layoutY="15.0" prefHeight="50.0" prefWidth="211.0">
                <children>
                   <Circle fill="DODGERBLUE" layoutX="46.0" layoutY="25.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Text layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">
+                  <Text fill="WHITE" layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <Text layoutX="87.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+                  <Text fill="WHITE" layoutX="87.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="522.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons/Search.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </top>

@@ -28,7 +28,7 @@
                </font>
             </Label>
             <PasswordField fx:id="register_password" layoutX="30.0" layoutY="305.0" prefHeight="40.0" prefWidth="253.0" />
-            <Button fx:id="btn_register" layoutX="30.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleRegister" prefHeight="25.0" prefWidth="253.0" text="Register">
+            <Button fx:id="btn_register" layoutX="30.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleRegister" prefHeight="25.0" prefWidth="253.0" stylesheets="@../application/application.css" text="Register" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

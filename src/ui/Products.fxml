@@ -64,12 +64,17 @@
                      </font>
                   </Button>
                   <Separator layoutX="721.0" layoutY="20.0" orientation="VERTICAL" prefHeight="200.0" />
-                  <TextField fx:id="product_search" layoutX="790.0" layoutY="127.0" prefHeight="35.0" prefWidth="220.0" />
-                  <Label layoutX="850.0" layoutY="73.0" text="Find Product">
+                  <TextField fx:id="product_search" layoutX="758.0" layoutY="127.0" prefHeight="35.0" prefWidth="220.0" />
+                  <Label layoutX="818.0" layoutY="83.0" text="Find Product">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="150.0" fitWidth="31.0" layoutX="1010.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icon.png" />
+                     </image>
+                  </ImageView>
                </children></Pane>
             <Pane layoutX="14.0" layoutY="266.0" prefHeight="375.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
                <children>
