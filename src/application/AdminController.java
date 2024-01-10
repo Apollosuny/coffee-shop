@@ -20,6 +20,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -90,6 +93,12 @@ public class AdminController {
 
     @FXML
     private TableColumn<CategoryDTO, String> col_name_category;
+    
+    @FXML
+    private BarChart<?, ?> db_income_chart;
+    
+    @FXML
+    private LineChart<?, ?> db_order_chart;
 
 	
 	private Alert alert;
@@ -120,40 +129,61 @@ public class AdminController {
 		loadPage("Menu");
 	}
 	
-	public ObservableList<CategoryDTO> categoryDataList() {
-		ObservableList<CategoryDTO> list = FXCollections.observableArrayList();
+	@FXML 
+	public void orders (MouseEvent event) {
+		loadPage("Orders");
+	}
+	
+	public void income_chart() {
+		db_income_chart.getData().clear();
 		
-		String sql = "SELECT * FROM categories";
-		
+		String sql = "SELECT export_date, SUM(total_bill) AS total_amount "
+				+ "FROM bill "
+				+ "GROUP BY export_date "
+				+ "ORDER BY export_date";
 		connect = new Database().connectDB();
+		XYChart.Series chart = new XYChart.Series();
 		
 		try {
 			prepare = connect.prepareStatement(sql);
 			rs = prepare.executeQuery();
 			
-			CategoryDTO categoryData;
-			
 			while(rs.next()) {
-				categoryData = new CategoryDTO(rs.getInt("id"), rs.getString("name"), rs.getString("description"));
-				list.add(categoryData);
+				chart.getData().add(new XYChart.Data<>(rs.getString(1), rs.getFloat(2)));
 			}
 			
+			db_income_chart.getData().add(chart);
 		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return list;
 	}
 	
-	public void showCategoryData () {
-		categoryList = categoryDataList();
-		System.out.println(category_table);
+	public void order_chart() {
+		db_order_chart.getData().clear();
 		
-		col_id_category.setCellValueFactory(new PropertyValueFactory<>("id"));
-		col_name_category.setCellValueFactory(new PropertyValueFactory<>("name"));
-		col_desc_category.setCellValueFactory(new PropertyValueFactory<>("description"));
+		String sql = "SELECT created_at, SUM(order_id) AS total_order "
+				+ "FROM orders "
+				+ "GROUP BY created_at "
+				+ "ORDER BY created_at";
+		connect = new Database().connectDB();
+		XYChart.Series chart = new XYChart.Series();
 		
-		category_table.setItems(categoryList);
+		try {
+			prepare = connect.prepareStatement(sql);
+			rs = prepare.executeQuery();
+			
+			while(rs.next()) {
+				chart.getData().add(new XYChart.Data<>(rs.getString(1), rs.getFloat(2)));
+			}
+			
+			db_order_chart.getData().add(chart);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
+	
 	
 	private void loadPage(String page) {
 		Parent root = null;
@@ -194,6 +224,7 @@ public class AdminController {
 	}
 	
 	public void initialize() {
-//		showCategoryData();
+		income_chart();
+		order_chart();
 	}
 }

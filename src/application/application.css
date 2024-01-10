@@ -10,9 +10,14 @@
 #btn_register {
 	-fx-background-color: #006341;
 	-fx-background-radius: 10px;
+	-fx-cursor: hand;
 }
 
 .col_bg {
 	-fx-background-color: #006341;
 	-fx-text-fill: white;
+}
+
+.chart-series-line {
+	-fx-stroke: #006341;
 }

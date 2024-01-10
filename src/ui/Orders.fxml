@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1076.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrdersController">
+   <children>
+      <AnchorPane layoutX="13.0" layoutY="11.0" prefHeight="630.0" prefWidth="1050.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="20.0" layoutY="14.0" text="Orders">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table_bill" layoutX="20.0" layoutY="55.0" prefHeight="561.0" prefWidth="1011.0">
+              <columns>
+                <TableColumn fx:id="col_bill_id" prefWidth="150.0" text="Bill Id" />
+                <TableColumn fx:id="col_bill_order_id" minWidth="0.0" prefWidth="174.0" text="Order Id" />
+                  <TableColumn fx:id="col_bill_total" minWidth="0.0" prefWidth="176.0" text="Total " />
+                  <TableColumn fx:id="col_bill_date" minWidth="0.0" prefWidth="183.0" text="Export date" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
