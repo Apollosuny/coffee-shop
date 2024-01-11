@@ -48,51 +48,6 @@ public class AdminController {
 	
 	@FXML 
 	private Button btn_logout;
-	
-	@FXML
-    private ComboBox<?> product_type;
-
-    @FXML
-    private ImageView product_image;
-
-    @FXML
-    private Button btn_update_product;
-
-    @FXML
-    private Button btn_add_product;
-
-    @FXML
-    private TextField product_price;
-
-    @FXML
-    private TableView<?> product_table;
-
-    @FXML
-    private TextField product_name;
-
-    @FXML
-    private Button btn_import_image;
-
-    @FXML
-    private Button btn_clear_product;
-
-    @FXML
-    private TextField product_quantity;
-
-    @FXML
-    private Button btn_delete_product;
-    
-    @FXML
-    private TableView<CategoryDTO> category_table;
-    
-    @FXML
-    private TableColumn<CategoryDTO, String> col_desc_category;
-
-    @FXML
-    private TableColumn<CategoryDTO, Integer> col_id_category;
-
-    @FXML
-    private TableColumn<CategoryDTO, String> col_name_category;
     
     @FXML
     private BarChart<?, ?> db_income_chart;

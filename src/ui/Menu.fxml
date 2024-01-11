@@ -23,7 +23,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="txt_subtotal" layoutX="175.0" layoutY="9.0" style="-fx-text-alignment: right;" text="\$12.9">
+                  <Label fx:id="txt_subtotal" layoutX="175.0" layoutY="9.0" style="-fx-text-alignment: right;" text="\$12.9" textAlignment="RIGHT">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -32,7 +32,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="txt_discount" layoutX="182.0" layoutY="45.0" style="-fx-text-alignment: right;" text="\$12.9">
+                  <Label fx:id="txt_discount" layoutX="182.0" layoutY="45.0" style="-fx-text-alignment: right;" text="\$12.9" textAlignment="RIGHT">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -41,7 +41,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="txt_tax" layoutX="182.0" layoutY="82.0" style="-fx-text-alignment: right;" text="\$12.9">
+                  <Label fx:id="txt_tax" layoutX="182.0" layoutY="82.0" style="-fx-text-alignment: right;" text="\$12.9" textAlignment="RIGHT">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -51,7 +51,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="txt_total" layoutX="163.0" layoutY="126.0" style="-fx-text-alignment: right;" text="\$12.9">
+                  <Label fx:id="txt_total" layoutX="163.0" layoutY="126.0" style="-fx-text-alignment: right;" text="\$12.9" textAlignment="RIGHT">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
