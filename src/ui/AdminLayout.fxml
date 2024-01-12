@@ -165,7 +165,7 @@
                <image>
                   <Image url="@../../images/logo.png" />
                </image></ImageView>
-            <Pane layoutX="990.0" layoutY="15.0" prefHeight="50.0" prefWidth="211.0">
+            <Pane layoutX="990.0" layoutY="15.0" onMouseClicked="#profile" prefHeight="50.0" prefWidth="211.0">
                <children>
                   <Circle fill="DODGERBLUE" layoutX="46.0" layoutY="25.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text fill="WHITE" layoutX="87.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trần Bảo Trung">

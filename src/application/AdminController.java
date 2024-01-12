@@ -89,6 +89,11 @@ public class AdminController {
 		loadPage("Orders");
 	}
 	
+	@FXML 
+	public void profile (MouseEvent event) {
+		loadPage("Profile");
+	}
+	
 	public void income_chart() {
 		db_income_chart.getData().clear();
 		
