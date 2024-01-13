@@ -7,7 +7,7 @@ public class Database {
 	public static Connection connectDB() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			Connection connect = DriverManager.getConnection("jdbc:sqlserver://localhost;DatabaseName=Coffeeshop; username=sa;password=12345678; encrypt=false;");
+			Connection connect = DriverManager.getConnection("jdbc:sqlserver://localhost;DatabaseName=Coffeeshop; username=;password=; encrypt=false;");
 			System.out.println("Connect successfully");
 			return connect;
 		} catch (Exception e) {
