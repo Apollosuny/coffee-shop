@@ -93,8 +93,8 @@ public class MenuController {
 		menuGetSubtotal();
 		txt_subtotal.setText("$" + subtotal);
 		txt_discount.setText("$0");
-		txt_tax.setText("$" + (subtotal * 0.1));
-		txt_total.setText("$" + (subtotal + subtotal * 0.1));
+		txt_tax.setText("$" + String.format("%.2f", (subtotal * 0.1)));
+		txt_total.setText("$" + String.format("%.2f", (subtotal + subtotal * 0.1)));
 	}
 	
 	public void menuPaymentBtn() {

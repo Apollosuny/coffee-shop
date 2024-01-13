@@ -103,7 +103,6 @@ public class ProductController {
     private Alert alert;
     
     public void productAddBtn() {
-//    	System.out.println(getCategoryId(product_type.getSelectionModel().getSelectedItem()));
         if (product_name.getText().isEmpty()
                 || product_price.getText().isEmpty()
                 || product_type.getSelectionModel().getSelectedItem() == null

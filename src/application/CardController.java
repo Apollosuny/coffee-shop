@@ -81,7 +81,7 @@ public class CardController {
     	
     	quantity = Integer.parseInt(card_quantity.getText());
     	
-    	String check = "";
+//    	String check = "";
     	
     	connect = new Database().connectDB();
     	
